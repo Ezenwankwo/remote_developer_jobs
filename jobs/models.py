@@ -10,7 +10,7 @@ class Job(models.Model):
         return f"{self.tweet_id} - {self.created_at}"
 
     class Meta:
-        ordering = ["created_at"]
+        ordering = ["-created_at"]
 
     @property
     def get_tweet_url(self):
