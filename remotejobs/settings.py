@@ -126,11 +126,10 @@ STATICFILES_DIRS = [
 # REDIS related settings
 #CELERY_BROKER_URL = 'redis://localhost:6360/0'
 CELERY_BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
-CELERY_RESULT_BACKEND = 'redis://localhost:6360/0'
 CELERY_TASK_SERIALIZER= 'json'
 CELERY_RESULT_SERIALIZER= 'json'
 
-REDIS_URL = 'redis://h:pd953bcb2d78af604e9ec029d369e5d2708f4a805f271693b393e34ddf78af2eb@ec2-54-83-245-251.compute-1.amazonaws.com:32119'
+BROKER_URL = 'redis://h:pd953bcb2d78af604e9ec029d369e5d2708f4a805f271693b393e34ddf78af2eb@ec2-54-83-245-251.compute-1.amazonaws.com:32119'
 
 
 # Activate Django-Heroku.
