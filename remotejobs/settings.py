@@ -123,5 +123,13 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
+# REDIS related settings
+CELERY_BROKER_URL = 'redis://localhost:6360/0'
+CELERY_BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
+CELERY_RESULT_BACKEND = 'redis://localhost:6360/0'
+CELERY_TASK_SERIALIZER= 'json'
+CELERY_RESULT_SERIALIZER= 'json'
+
+
 # Activate Django-Heroku.
 django_heroku.settings(locals())

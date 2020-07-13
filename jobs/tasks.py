@@ -1,9 +1,12 @@
+from __future__ import absolute_import, unicode_literals
+
 import time
 
+from celery import shared_task
 from .tweets import setup_rules, stream_connect, bearer_token
 
 
-# @shared_task
+@shared_task
 def get_tweets():
     """this function will get tweets from the twitter api 
     and save them to the database"""
