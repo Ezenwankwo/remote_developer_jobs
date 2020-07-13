@@ -18,6 +18,8 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 # Load task modules from all registered Django app configs.
 app.autodiscover_tasks()
 
+BROKER_URL = 'redis://h:pd953bcb2d78af604e9ec029d369e5d2708f4a805f271693b393e34ddf78af2eb@ec2-54-83-245-251.compute-1.amazonaws.com:32119'
+
 @app.task(bind=True)
 def debug_task(self):
     print('Request: {0!r}'.format(self.request))
