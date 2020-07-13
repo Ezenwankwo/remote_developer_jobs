@@ -129,7 +129,7 @@ CELERY_BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
 CELERY_TASK_SERIALIZER= 'json'
 CELERY_RESULT_SERIALIZER= 'json'
 
-BROKER_URL = 'redis://h:p219083464fdfc06e43fe3e5ee9af1374c342e5497b6f00db10e15209cd04e1d9@ec2-34-236-54-188.compute-1.amazonaws.com:19199'
+REDIS_URL = 'redis://h:p219083464fdfc06e43fe3e5ee9af1374c342e5497b6f00db10e15209cd04e1d9@ec2-34-236-54-188.compute-1.amazonaws.com:19199'
 
 
 # Activate Django-Heroku.
