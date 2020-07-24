@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/3.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
-import django_heroku
+#import django_heroku
 import os
+
+from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'i0z7_ahd&l1r(q4@13c3_-+#s1o6m=#ng39_*1vt^2#+38byu@'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -124,13 +126,14 @@ STATICFILES_DIRS = [
 ]
 
 # REDIS related settings
-#CELERY_BROKER_URL = 'redis://localhost:6360/0'
-#CELERY_BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
-#CELERY_TASK_SERIALIZER= 'json'
-#CELERY_RESULT_SERIALIZER= 'json'
+CELERY_BROKER_URL = 'redis://localhost:6360/0'
+CELERY_BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
+CELERY_TASK_SERIALIZER= 'json'
+CELERY_RESULT_SERIALIZER= 'json'
 
-CELERY_BROKER_URL = 'redis://h:p219083464fdfc06e43fe3e5ee9af1374c342e5497b6f00db10e15209cd04e1d9@ec2-34-236-54-188.compute-1.amazonaws.com:19199'
+#CELERY_BROKER_URL = 'redis://h:p219083464fdfc06e43fe3e5ee9af1374c342e5497b6f00db10e15209cd04e1d9@ec2-34-236-54-188.compute-1.amazonaws.com:19199'
 
 
 # Activate Django-Heroku.
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
+

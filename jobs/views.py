@@ -12,3 +12,4 @@ class IndexView(TemplateView):
 class JobsView(ListView):
     model = Job
     template_name = "jobs.html"
+    paginate_by = 50

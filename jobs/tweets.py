@@ -5,13 +5,12 @@ import dateutil
 from dateutil import parser
 from requests.auth import AuthBase
 from requests.auth import HTTPBasicAuth
+from decouple import config 
 
 from .models import Job
 
-consumer_key = "KMY8GeQwSyETxlOXjvMEm9f05"  # Add your API key here
-consumer_secret = (
-    "BEiiAllNdi7b7bYW5CCfEhtPLbS3owKHwXz30Sq0doP1WFoe4a"  # Add your API secret key here
-)
+consumer_key = config('consumer_key')  # Add your API key here
+consumer_secret = config('consumer_secret')  # Add your API secret key here
 
 stream_url = "https://api.twitter.com/labs/1/tweets/stream/filter"
 rules_url = "https://api.twitter.com/labs/1/tweets/stream/filter/rules"
